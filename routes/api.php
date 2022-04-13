@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::get('/ping', function(){
         'pong' => true
     ];
 });
+
+Route::post('/user', [AuthController::class, 'create']);
 
 
 Route::post('/todo', [ApiController::class, 'createTodo']);
